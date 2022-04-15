@@ -15,20 +15,32 @@ public class AppTest
     
 {
 	WebDriver driver=null;
-//    @Parameters("browser")
-	@Test
-	public void test(String browser)
+   @Parameters("browser")
+	@Test(priority=2)
+	public void test1(String browser) throws InterruptedException
 	{
-//		if(browser.equals("chrome")){
-//		
-//		WebDriverManager.chromedriver().setup();
-//		 driver=new ChromeDriver();
-//		}
-//		else if(browser.equals("firefox")){
-//			WebDriverManager.firefoxdriver().setup();
-//			 driver=new FirefoxDriver();
-//		}
-    	WebDriverManager.chromedriver().setup();
+		if(browser.equals("chrome")){
+		
+		WebDriverManager.chromedriver().setup();
 		 driver=new ChromeDriver();
+		 driver.get("https://www.google.co.in/");
+		 Thread.sleep(2000);
+		 driver.close();
+		}
+		else if(browser.equals("firefox")){
+			WebDriverManager.firefoxdriver().setup();
+			 driver=new FirefoxDriver();
+			
+			 driver.get("https://www.google.co.in/");
+			 Thread.sleep(2000);
+			 driver.close();
+		}
+//    	WebDriverManager.chromedriver().setup();
+//		 driver=new ChromeDriver();
+	}
+	@Test(priority=1)
+	public void test()
+	{
+		System.out.println("hii i m printing this statements");
 	}
 }
