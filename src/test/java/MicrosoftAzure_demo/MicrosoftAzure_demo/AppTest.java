@@ -31,6 +31,7 @@ public class AppTest
 			System.out.println("ended chrome browser");
 		}
 		else if(browser.equals("firefox")){
+			System.out.println("started firefox browser");
 			WebDriverManager.firefoxdriver().setup();
 			 driver=new FirefoxDriver();
 			
