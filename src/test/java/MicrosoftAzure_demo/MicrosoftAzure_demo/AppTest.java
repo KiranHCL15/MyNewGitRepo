@@ -38,6 +38,7 @@ public class AppTest
 			 driver.get("https://www.google.co.in/");
 			 Thread.sleep(2000);
 			 driver.close();
+				System.out.println("ended firefox browser");
 		}
 //    	WebDriverManager.chromedriver().setup();
 //		 driver=new ChromeDriver();
